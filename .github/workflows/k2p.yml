@@ -51,7 +51,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_V2RAY/d' .config
@@ -64,7 +63,8 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NPC/d' .config
         sed -i '/CONFIG_FIRMWARE_WEBUI_HIDE_VPN/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .confg
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
