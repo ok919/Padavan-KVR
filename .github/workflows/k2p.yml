@@ -84,7 +84,7 @@ jobs:
         ##VPN
         echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=y" >> .config #hidevpn
         #echo  "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wireguard
+        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #wireguard
         ##Other
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config #qos
         echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config #vlmcsd
