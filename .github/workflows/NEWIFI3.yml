@@ -32,11 +32,15 @@ jobs:
     - name: Build Firmware
       run: |
         cd /opt/rt-n56u/trunk
-        if [ ! -f configs/templates/NEWIFI3.config ] ; then
-        echo "configs/templates/NEWIFI3.config not found "
+        if [ ! -f configs/templates/$TNAME.config ] ; then
+        echo "configs/templates/$TNAME.config not found "
         exit 1
         fi
-        cp -f configs/templates/NEWIFI3.config .config
+        cp -f configs/templates/$TNAME.config .config
+        if [ ! -f .config ] ; then
+        echo "Before sed .config not found "
+        exit 1
+        fi
          ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
@@ -95,8 +99,9 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         #########################################################################################
+        # sed -i 's/\r//' /opt/rt-n56u/trunk/.config
         sudo ./clear_tree
-        sudo ./build_firmware_modify NEWIFI3 0
+        sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
