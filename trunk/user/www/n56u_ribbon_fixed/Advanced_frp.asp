@@ -148,9 +148,9 @@ function done_validating(action){
 									<tr> <th>frpc<#running_status#></th>
                                             <td id="frpc_status" colspan="2"></td>
                                         </tr>
-										<!-- <tr> <th>frps<#running_status#></th>
+										<tr> <th>frps<#running_status#></th>
                                             <td id="frps_status" colspan="2"></td>
-                                        </tr> -->
+                                        </tr>
 										<tr>
 											<th width="30%"><a class="help_tooltip" href="javascript: void(0)" onmouseover="openTooltip(this, 26, 9);">启用frpc</a></th>
 											<td>
