@@ -11,10 +11,10 @@ download_test:
 		git clone https://github.com/rozhuk-im/msd_lite.git ; \
 		cd $(SRC_NAME) ; \
 		git submodule update --init --recursive ; \
-		# patch -p1 -i ../msd_lite.diff ; \
-		# cd src/liblcb ; \
-		# patch -p1 -i ../../../liblcb_msd_lite.diff ; \
-		# cd ../../; \
+		patch -p1 -i ../msd_lite.diff ; \
+		cd src/liblcb ; \
+		patch -p1 -i ../../../liblcb_msd_lite.diff ; \
+		cd ../../; \
 	fi )
 
 config_test:
