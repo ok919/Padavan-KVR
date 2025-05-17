@@ -77,7 +77,7 @@ jobs:
         ######################################################################
         ##内网穿透
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  #frpc
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=s" >> .config  #frps
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config  #frps
         ##VPN
         echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=y" >> .config #hidevpn
         ##Other
