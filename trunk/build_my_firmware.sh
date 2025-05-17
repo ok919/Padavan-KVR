@@ -25,51 +25,47 @@ sed -i 's/CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=y/CONFIG_FIRMWARE_INCLUDE_NJIT_CLI
 sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
 sed -i 's/CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y/CONFIG_FIRMWARE_INCLUDE_MSD_LITE=n/g' .config
 
+sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION/d' .config 
+sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_V2RAY/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_XRAY/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_TROJAN/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_SSOBFS/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_NPC/d' .config
+sed -i '/CONFIG_FIRMWARE_WEBUI_HIDE_VPN/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
+sed -i '/CONFIG_FIRMWARE_INCLUDE_E2FSPROGS/d' .config
+
 ##以下为插件增减选项,y为集成,n为不集成,请根据自己路由的FLASH大小选择,切勿超大小,不然固件刷入后会无法启动
 ##广告管理##
-echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
+echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
 
-
-##科学上网##
-echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config #科学上网插件，选择n后全部有关插件都不集成
-echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件 v2ray和xray只能二选一！！
-echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件，可以代替v2ray，大小5M多
-echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config #集成trojan执行文件
-echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> .config #simple-obfs混淆插件
-##科学上网##
-
-##广告管理##
-echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
-echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤
-##广告管理##
-
-##DNS服务##
-echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
-echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adg DNS去AD
-##DNS服务##
-
-##文件管理##
-echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
-echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
-##文件管理##
-
-##音乐解锁##
-echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
-echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config #网易云解锁GO版本执行文件（2M多）注意固件超大小
-##音乐解锁##
-
-##内网穿透服务##
-echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
-echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
-echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config #frpc
-echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #frps
-echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto
-#echo "CONFIG_FIRMWARE_INCLUDE_NPC=n" >> .config #npc
-##内网穿透服务##
-##阿里云网盘
-echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config
-##阿里云网盘
-
+##内网穿透
+echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  #frpc
+echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config  #frps
+##VPN
+echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=y" >> .config #hidevpn
+echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wireguard
+##Other
+echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config #qos
+echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config #vlmcsd
+echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
+echo "CONFIG_FIRMWARE_INCLUDE_MTR=y" >> .config #mtr
 fi
 
 ROOTDIR=`pwd`
