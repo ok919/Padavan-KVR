@@ -69,7 +69,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_MSD_LITE/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
         
         ######################################################################
@@ -85,7 +84,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config #qos
         echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config #vlmcsd
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
-        echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #msd_lite`
         echo "CONFIG_FIRMWARE_INCLUDE_MTR=y" >> .config #mtr
         ###############################################################################
         ##########

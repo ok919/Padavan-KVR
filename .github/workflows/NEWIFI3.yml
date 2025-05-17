@@ -71,7 +71,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_MSD_LITE/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
         
         ######################################################################
@@ -87,7 +86,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config #qos
         echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config #vlmcsd
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
-        echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #msd_lite`
         echo "CONFIG_FIRMWARE_INCLUDE_MTR=y" >> .config #mtr
         ###############################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
