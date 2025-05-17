@@ -11,3 +11,14 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
 
  ############################# MACRO SECTION ############################
  macro(try_c_flag prop flag)
+
+
+@@ -182,7 +182,7 @@
+ #try_c_flag(WUNUSED_FUNCTION	"-Wno-unused-function")
+ #try_c_flag(WUNUSED_PARAM	"-Wno-unused-parameter")
+ #try_c_flag(WUNUSED_VAR		"-Wno-unused-variable")
+- try_c_flag(WUNSAFE_BUFFER_USAGE	"-Wno-unsafe-buffer-usage")
++ #try_c_flag(WUNSAFE_BUFFER_USAGE	"-Wno-unsafe-buffer-usage")
+ try_c_flag(WVARIADIC_MACROS	"-Wno-variadic-macros")
+ try_c_flag(WGNU_ZERO_VAR_MACRO_ARGS	"-Wno-gnu-zero-variadic-macro-args")
+ try_c_flag(WZERO_LENGTH_ARRAY	"-Wno-zero-length-array")
